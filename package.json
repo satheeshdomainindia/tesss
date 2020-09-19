@@ -6,7 +6,6 @@
   "scripts": {
     "build:css": "postcss src/tailwind.css -o style.css",
     "build": "NODE_ENV=production postcss src/tailwind.css -o styles.css"
-
   },
   "repository": {
     "type": "git",
@@ -25,9 +24,6 @@
     "cssnano": "^4.1.10",
     "tailwindcss": "^1.8.10",
     "postcss-cli": "^7.1.2"
-
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }
