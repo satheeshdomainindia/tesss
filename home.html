@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="flex items-center justify-between flex-wrap py-6 lg:py-1 lg:px-6 sm:p-6 fixed w-full z-10 top-0" x-data="{ isOpen: false }"
+        @keydown.escape="isOpen = false" :class="{ 'shadow-lg bg-indigo-500' : isOpen , 'bg-indigo-500' : !isOpen}">
+        <!--Logo etc-->
+        <div class="flex items-center flex-shrink-0 text-white mr-8">
+            <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+                <img class="h-10 lg:h-16 w-auto"  src="img/logos/header-light.png" alt="DreamHost">
+            </a>
+        </div>
+
+        <!--Toggle button (hidden on large screens)-->
+        <button @click="isOpen = !isOpen" type="button"
+            class="block lg:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+            :class="{ 'transition transform-180': isOpen }">
+            <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+                <path x-show="!isOpen" fill-rule="evenodd"
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+            </svg>
+        </button>
+
+        <!--Menu-->
+        <div class="w-full flex-col lg:flex lg:items-center lg:w-auto"
+            :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false"
+            x-show.transition="true">
+            <ul class="lg:pt-0 list-reset lg:flex justify-end flex-1 items-center text-xs">
+               
+                <li class="mr-3">
+                    <a class="inline-block text-indigo-100 no-underline hover:text-indigo-300  hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">
+                        <i class="fas fa-phone pr-1"></i>+91 637910840
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block  text-indigo-100 no-underline hover:text-indigo-300  hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false"> 
+                        <i class="fas fa-comment pr-1"></i>Support
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block  text-indigo-100 no-underline hover:text-indigo-300  hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">
+                        <i class="fas fa-question-circle pr-1"></i>Knowledge Base
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block  text-indigo-100 no-underline hover:text-indigo-300  hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">
+                        <i class="fas fa-user-plus pr-1"></i>Register 
+                    </a>
+                </li>
+            </ul>
+            <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
+                <li class="mr-3">
+                    <a class="inline-block py-2 px-4 text-white uppercase text-sm font-bold" href="#" @click="isOpen = false">Products
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block  text-indigo-200 uppercase text-sm font-bold hover:text-indigo-300  hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">Features
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block  text-indigo-200 uppercase text-sm font-bold hover:text-indigo-300  hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">Network
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block  text-indigo-200 uppercase text-sm font-bold hover:text-indigo-300  hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">Company
+                    </a>
+                </li>
+
+                <li class="mr-3">
+                    <a class="bg-yellow-500 font-bold text-xs uppercase text-gray-700  hover:text-gray-500 px-3 py-2 inline-flex rounded"
+                        href="#" @click="isOpen = false">
+                      <i class="fas fa-lock pr-5 h-3 w-3"></i> Client Login 
+                    </a>
+                </li>
+                
+							
+            </ul>
+        </div>
+    </nav>
+
+    <!--Container for content-->
+    <div class="container shadow-lg mx-auto bg-white mt-24 md:mt-18">
+       
+    </div>
+
+</body>
+
+</html>
